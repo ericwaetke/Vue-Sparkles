@@ -18,13 +18,14 @@
 //
 //
 var script = {
-  name: 'SparkleInstance',
+  name: "SparkleInstance",
   props: {
     size: Number,
     appliedStyle: Object,
     color: String,
     createdAt: Number,
-    appliedKey: String
+    appliedKey: String,
+    path: String
   },
   mounted: function mounted() {
     var _this = this;
@@ -166,7 +167,7 @@ var __vue_render__ = function __vue_render__() {
     attrs: {
       "createdAt": _vm.createdAt
     }
-  }, [_vm._ssrNode("<svg" + _vm._ssrAttr("width", _vm.size) + _vm._ssrAttr("height", _vm.size) + " viewBox=\"0 0 160 160\" fill=\"none\"><path d=\"M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z\"" + _vm._ssrAttr("fill", _vm.color) + "></path></svg>")]);
+  }, [_vm._ssrNode("<svg" + _vm._ssrAttr("width", _vm.size) + _vm._ssrAttr("height", _vm.size) + " viewBox=\"0 0 160 160\" fill=\"none\"><path" + _vm._ssrAttr("d", _vm.path) + _vm._ssrAttr("fill", _vm.color) + "></path></svg>")]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -174,7 +175,7 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-be6fb70c_0", {
+  inject("data-v-ee1a390c_0", {
     source: ".sparkleWrapper{position:absolute;pointer-events:none;z-index:2;animation:growAndShrink .6s ease-in-out forwards}svg{animation:spin .6s linear forwards}@keyframes growAndShrink{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(180deg)}}",
     map: undefined,
     media: undefined
@@ -186,7 +187,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 var __vue_scope_id__ = undefined;
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-be6fb70c";
+var __vue_module_identifier__ = "data-v-ee1a390c";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
@@ -197,12 +198,15 @@ var __vue_component__ = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);//
 var script$1 = {
-  name: 'VueSparkles',
+  name: "VueSparkles",
   data: function data() {
     return {
-      color: 'hsl(50deg, 100%, 50%)',
       instances: []
     };
+  },
+  props: {
+    path: [String, Array],
+    color: [String, Array]
   },
   methods: {
     generateSparkle: function generateSparkle() {
@@ -213,8 +217,8 @@ var script$1 = {
         size: this.random(10, 20),
         style: {
           // Pick a random spot in the available space
-          top: this.random(0, 100) + '%',
-          left: this.random(0, 100) + '%',
+          top: this.random(0, 100) + "%",
+          left: this.random(0, 100) + "%",
           // Float sparkles above sibling content
           zIndex: this.random(1, 3)
         }
@@ -224,16 +228,35 @@ var script$1 = {
       return Math.floor(Math.random() * (max - min)) + min;
     },
     addSparkle: function addSparkle() {
+      // Setting Path Values
+      var sparklePath = "hsl(50deg, 100%, 50%)";
+
+      if (this.customPath && this.multiplePaths) {
+        sparklePath = this.path[this.random(0, this.path.length - 1)];
+      } else if (this.customPath) {
+        sparklePath = this.path;
+      } // Setting Color Values
+
+
+      var sparkleColor = "hsl(50deg, 100%, 50%)";
+
+      if (this.customColor && this.multipleColors) {
+        sparkleColor = "hsl(" + this.random(parseInt(this.color[0].h), parseInt(this.color[1].h)) + "deg, " + this.random(parseInt(this.color[0].s), parseInt(this.color[1].s)) + "%, " + this.random(parseInt(this.color[0].l), parseInt(this.color[1].l)) + "%)";
+      } else if (this.customColor) {
+        sparkleColor = this.color;
+      }
+
       var parent = this.$refs.wrapper;
       var sparkle = this.generateSparkle();
       var SparkleClass = Vue__default['default'].extend(__vue_component__);
       var instance = new SparkleClass({
         propsData: {
-          color: sparkle.color,
+          color: sparkleColor,
           size: sparkle.size,
           appliedStyle: sparkle.style,
           key: sparkle.appliedKey,
-          createdAt: sparkle.createdAt
+          createdAt: sparkle.createdAt,
+          path: sparklePath
         }
       });
       instance.$mount();
@@ -246,8 +269,21 @@ var script$1 = {
     }
   },
   mounted: function mounted() {
-    this.addSparkle();
     this.tick();
+  },
+  computed: {
+    customPath: function customPath() {
+      return this.path != null;
+    },
+    multiplePaths: function multiplePaths() {
+      return Array.isArray(this.path);
+    },
+    customColor: function customColor() {
+      return this.color != null;
+    },
+    multipleColors: function multipleColors() {
+      return Array.isArray(this.color);
+    }
   }
 };/* script */
 var __vue_script__$1 = script$1;
@@ -274,7 +310,7 @@ var __vue_staticRenderFns__$1 = [];
 
 var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-0555f8f4_0", {
+  inject("data-v-719de89a_0", {
     source: "#sparkleWrapper{position:relative;display:inline-block}.sparkleChildWrapper{position:relative;z-index:2;font-weight:700}",
     map: undefined,
     media: undefined
@@ -286,7 +322,7 @@ var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$1 = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-0555f8f4";
+var __vue_module_identifier__$1 = "data-v-719de89a";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;

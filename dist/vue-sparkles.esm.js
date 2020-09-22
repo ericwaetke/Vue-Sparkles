@@ -20,13 +20,14 @@ import Vue from 'vue';
 //
 //
 var script = {
-  name: 'SparkleInstance',
+  name: "SparkleInstance",
   props: {
     size: Number,
     appliedStyle: Object,
     color: String,
     createdAt: Number,
-    appliedKey: String
+    appliedKey: String,
+    path: String
   },
 
   mounted() {
@@ -193,7 +194,7 @@ var __vue_render__ = function () {
     }
   }, [_c('path', {
     attrs: {
-      "d": "M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z",
+      "d": _vm.path,
       "fill": _vm.color
     }
   })])]);
@@ -204,7 +205,7 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-be6fb70c_0", {
+  inject("data-v-ee1a390c_0", {
     source: ".sparkleWrapper{position:absolute;pointer-events:none;z-index:2;animation:growAndShrink .6s ease-in-out forwards}svg{animation:spin .6s linear forwards}@keyframes growAndShrink{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(180deg)}}",
     map: undefined,
     media: undefined
@@ -231,15 +232,18 @@ const __vue_component__ = /*#__PURE__*/normalizeComponent({
 
 //
 var script$1 = {
-  name: 'VueSparkles',
+  name: "VueSparkles",
 
   data() {
     return {
-      color: 'hsl(50deg, 100%, 50%)',
       instances: []
     };
   },
 
+  props: {
+    path: [String, Array],
+    color: [String, Array]
+  },
   methods: {
     generateSparkle() {
       return {
@@ -249,8 +253,8 @@ var script$1 = {
         size: this.random(10, 20),
         style: {
           // Pick a random spot in the available space
-          top: this.random(0, 100) + '%',
-          left: this.random(0, 100) + '%',
+          top: this.random(0, 100) + "%",
+          left: this.random(0, 100) + "%",
           // Float sparkles above sibling content
           zIndex: this.random(1, 3)
         }
@@ -262,16 +266,35 @@ var script$1 = {
     },
 
     addSparkle() {
+      // Setting Path Values
+      let sparklePath = "hsl(50deg, 100%, 50%)";
+
+      if (this.customPath && this.multiplePaths) {
+        sparklePath = this.path[this.random(0, this.path.length - 1)];
+      } else if (this.customPath) {
+        sparklePath = this.path;
+      } // Setting Color Values
+
+
+      let sparkleColor = "hsl(50deg, 100%, 50%)";
+
+      if (this.customColor && this.multipleColors) {
+        sparkleColor = "hsl(" + this.random(parseInt(this.color[0].h), parseInt(this.color[1].h)) + "deg, " + this.random(parseInt(this.color[0].s), parseInt(this.color[1].s)) + "%, " + this.random(parseInt(this.color[0].l), parseInt(this.color[1].l)) + "%)";
+      } else if (this.customColor) {
+        sparkleColor = this.color;
+      }
+
       const parent = this.$refs.wrapper;
       const sparkle = this.generateSparkle();
       var SparkleClass = Vue.extend(__vue_component__);
       var instance = new SparkleClass({
         propsData: {
-          color: sparkle.color,
+          color: sparkleColor,
           size: sparkle.size,
           appliedStyle: sparkle.style,
           key: sparkle.appliedKey,
-          createdAt: sparkle.createdAt
+          createdAt: sparkle.createdAt,
+          path: sparklePath
         }
       });
       instance.$mount();
@@ -287,10 +310,27 @@ var script$1 = {
   },
 
   mounted() {
-    this.addSparkle();
     this.tick();
-  }
+  },
 
+  computed: {
+    customPath() {
+      return this.path != null;
+    },
+
+    multiplePaths() {
+      return Array.isArray(this.path);
+    },
+
+    customColor() {
+      return this.color != null;
+    },
+
+    multipleColors() {
+      return Array.isArray(this.color);
+    }
+
+  }
 };
 
 /* script */
@@ -320,7 +360,7 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-0555f8f4_0", {
+  inject("data-v-719de89a_0", {
     source: "#sparkleWrapper{position:relative;display:inline-block}.sparkleChildWrapper{position:relative;z-index:2;font-weight:700}",
     map: undefined,
     media: undefined
