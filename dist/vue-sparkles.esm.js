@@ -267,7 +267,7 @@ var script$1 = {
 
     addSparkle() {
       // Setting Path Values
-      let sparklePath = "hsl(50deg, 100%, 50%)";
+      let sparklePath = "M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z";
 
       if (this.customPath && this.multiplePaths) {
         sparklePath = this.path[this.random(0, this.path.length - 1)];
@@ -360,7 +360,7 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-719de89a_0", {
+  inject("data-v-f6c49704_0", {
     source: "#sparkleWrapper{position:relative;display:inline-block}.sparkleChildWrapper{position:relative;z-index:2;font-weight:700}",
     map: undefined,
     media: undefined

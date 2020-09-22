@@ -1,6 +1,6 @@
 {
   "name": "vue-sparkles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue component making things a little sparklier",
   "main": "dist/vue-sparkles.ssr.js",
   "browser": "dist/vue-sparkles.esm.js",
