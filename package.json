@@ -1,12 +1,19 @@
 {
   "name": "vue-sparkles",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "A Vue component making things a little sparklier",
   "main": "dist/vue-sparkles.ssr.js",
   "browser": "dist/vue-sparkles.esm.js",
   "module": "dist/vue-sparkles.esm.js",
   "unpkg": "dist/vue-sparkles.min.js",
-  "keywords": ["effects", "vue", "vuejs", "sparkle", "sparkles"],
+  "keywords": [
+    "effects",
+    "vue",
+    "vuejs",
+    "sparkle",
+    "sparkles"
+  ],
+  "license": "MIT",
   "author": {
     "name": "Eric Wätke",
     "email": "email@ericwaetke.com",
@@ -37,6 +44,7 @@
     "@vue/cli-plugin-babel": "^4.3.1",
     "@vue/cli-service": "^4.3.1",
     "cross-env": "^7.0.2",
+    "eslint": "^7.9.0",
     "minimist": "^1.2.5",
     "rollup": "^2.7.3",
     "rollup-plugin-babel": "^4.4.0",

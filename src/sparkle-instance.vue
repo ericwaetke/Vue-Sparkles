@@ -19,22 +19,22 @@
 
 <script>
 export default {
-  name: 'SparkleInstance',
-  props: {
-    size: Number,
-    appliedStyle: Object,
-    color: String,
-    createdAt: Number,
-    appliedKey: String,
-    path: String
-  },
-  mounted () {
-    window.setTimeout(() => {
-      this.$destroy()
-      this.$el.parentNode.removeChild(this.$el)
-    }, 600)
-  }
-}
+	name: "SparkleInstance",
+	props: {
+		size: Number,
+		appliedStyle: Object,
+		color: String,
+		createdAt: Number,
+		appliedKey: String,
+		path: String
+	},
+	mounted () {
+		window.setTimeout(() => {
+			this.$destroy();
+			this.$el.parentNode.removeChild(this.$el);
+		}, 600);
+	}
+};
 </script>
 
 <style>

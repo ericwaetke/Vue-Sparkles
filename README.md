@@ -2,6 +2,12 @@
 # Vue Sparkles
 A Vue component making things a little sparklier
 
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/vue-sparkles)
+![npm](https://img.shields.io/npm/v/vue-sparkles)
+![GitHub issues](https://img.shields.io/github/issues/Thaiten/Vue-Sparkles)
+![NPM](https://img.shields.io/npm/l/vue-sparkles)
+![AppVeyor](https://img.shields.io/appveyor/build/Thaiten/Vue-Sparkles)
+
 ## What is Vue Sparkles?
 Vue Sparkles is the Vue.JS variant of [Josh W Comeau's animated sparkles for React](https://joshwcomeau.com/react/animated-sparkles-in-react/).
 I took a couple of different approaches to the idea than he did. And I had to, since this is Vue and not React, of course :)
