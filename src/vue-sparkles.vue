@@ -38,6 +38,9 @@ export default {
 			};
 		},
 		random (min, max) {
+			if (min === 0 && max === 1) {
+				return Math.round(Math.random())
+			}
 			return Math.floor(Math.random() * (max - min)) + min;
 		},
 		addSparkle () {

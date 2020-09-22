@@ -225,6 +225,10 @@ var script$1 = {
       };
     },
     random: function random(min, max) {
+      if (min === 0 && max === 1) {
+        return Math.round(Math.random());
+      }
+
       return Math.floor(Math.random() * (max - min)) + min;
     },
     addSparkle: function addSparkle() {
@@ -310,7 +314,7 @@ var __vue_staticRenderFns__$1 = [];
 
 var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-f6c49704_0", {
+  inject("data-v-c1b44120_0", {
     source: "#sparkleWrapper{position:relative;display:inline-block}.sparkleChildWrapper{position:relative;z-index:2;font-weight:700}",
     map: undefined,
     media: undefined
@@ -322,7 +326,7 @@ var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
 var __vue_scope_id__$1 = undefined;
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-f6c49704";
+var __vue_module_identifier__$1 = "data-v-c1b44120";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;

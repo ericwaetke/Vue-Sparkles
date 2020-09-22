@@ -1,4 +1,5 @@
 
+
 # Vue Sparkles
 A Vue component making things a little sparklier
 
@@ -74,11 +75,27 @@ So, this should be pretty self-explanatory. For a single path you just have to p
 For multiple paths, just bind the path-prop to an array containing the paths.
 ## Features
 
-- [x] Sparkles behind and in front of the child element
-- [x] Color Prop
-- [x] Multiple colors
-- [x] Custom Path
-- [ ] Click to disable
-- [ ] Outline SVGs (?)
+ - [x] Sparkles behind and in front of the child element
+ - [x] Color Prop
+ - [x] Multiple colors
+ - [x] Custom Path
+ - [ ] Click to disable
+ - [ ] Outline SVGs (?)
+## Changelog
+### 1.0.1 & 1.0.2
+ - Hotfix: default path was the default color
+ - Hotfix: when alternating between 2 paths, the random function would always return 0, instead of 0 or 1
+### 1.0.0
+- Stable Release
+- Addition of ESLint
+### 0.1.4
+- Custom Colors and Paths can now be passed through the `color` or `path` prop
+	- Single Color/Path as String
+	- Multiple Colors/Paths as Arrays
+### 0.1.3
+- Build-Issues fixed, the module will now be found on import
+### Initial Release (0.1.0)
+- Initial Release: \<VueSparkle> adds sparkles to Child Element passed through the slot.
+
 ## Contribute
 If you think this can be optimized in any way, please feel free to do so, this is open source after all :)

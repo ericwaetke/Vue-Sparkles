@@ -262,6 +262,10 @@ var script$1 = {
     },
 
     random(min, max) {
+      if (min === 0 && max === 1) {
+        return Math.round(Math.random());
+      }
+
       return Math.floor(Math.random() * (max - min)) + min;
     },
 
@@ -360,7 +364,7 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-f6c49704_0", {
+  inject("data-v-c1b44120_0", {
     source: "#sparkleWrapper{position:relative;display:inline-block}.sparkleChildWrapper{position:relative;z-index:2;font-weight:700}",
     map: undefined,
     media: undefined
