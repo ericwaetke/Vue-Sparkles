@@ -82,6 +82,8 @@ For multiple paths, just bind the path-prop to an array containing the paths.
  - [ ] Click to disable
  - [ ] Outline SVGs (?)
 ## Changelog
+### 1.0.3
+ - Fix: Changed CSS to Skoped, since it made some SVGs outside the sparkle elements rotate
 ### 1.0.1 & 1.0.2
  - Hotfix: default path was the default color
  - Hotfix: when alternating between 2 paths, the random function would always return 0, instead of 0 or 1

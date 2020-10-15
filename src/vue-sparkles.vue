@@ -102,7 +102,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #sparkleWrapper{
   position: relative;
   display: inline-block;
