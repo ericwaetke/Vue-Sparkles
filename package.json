@@ -2,39 +2,29 @@
   "name": "vue-sparkles",
   "version": "1.0.3",
   "description": "A Vue component making things a little sparklier",
-  "main": "dist/vue-sparkles.ssr.js",
-  "browser": "dist/vue-sparkles.esm.js",
-  "module": "dist/vue-sparkles.esm.js",
-  "unpkg": "dist/vue-sparkles.min.js",
-  "keywords": [
-    "effects",
-    "vue",
-    "vuejs",
-    "sparkle",
-    "sparkles"
-  ],
-  "license": "MIT",
   "author": {
     "name": "Eric Wätke",
     "email": "email@ericwaetke.com",
     "url": "https://ericwaetke.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Thaiten/Vue-Sparkles/"
+  "scripts": {
+    "serve": "vue-cli-service serve dev/serve.js",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
+  "main": "dist/vue-sparkles.ssr.js",
+  "module": "dist/vue-sparkles.esm.js",
+  "browser": "dist/vue-sparkles.esm.js",
+  "unpkg": "dist/vue-sparkles.min.js",
   "files": [
     "dist/*",
     "src/**/*.vue"
   ],
-  "scripts": {
-    "serve": "vue-cli-service serve dev/serve.js",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+  "dependencies": {
+    "vue": "^3.0.0-beta.1"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
@@ -43,6 +33,7 @@
     "@rollup/plugin-replace": "^2.3.2",
     "@vue/cli-plugin-babel": "^4.3.1",
     "@vue/cli-service": "^4.3.1",
+    "@vue/compiler-sfc": "^3.0.0-beta.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "minimist": "^1.2.5",
@@ -51,12 +42,24 @@
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-vue": "^5.1.6",
     "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "vue-cli-plugin-vue-next": "~0.1.4"
   },
   "peerDependencies": {
     "vue": "^2.6.11"
   },
   "engines": {
     "node": ">=10"
+  },
+  "keywords": [
+    "effects",
+    "vue",
+    "vuejs",
+    "sparkle",
+    "sparkles"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thaiten/Vue-Sparkles/"
   }
 }

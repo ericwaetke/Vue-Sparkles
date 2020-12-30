@@ -7,12 +7,10 @@
       :width="size"
       :height="size"
       viewBox="0 0 160 160"
-      fill="none"
-    >
+      fill="none">
       <path
         :d="path"
-        :fill="color"
-      />
+        :fill="color" />
     </svg>
   </div>
 </template>
@@ -44,7 +42,7 @@ export default {
   z-index: 2;
   animation: growAndShrink 600ms ease-in-out forwards;
 }
-svg{
+.sparkleWrapper svg{
   animation: spin 600ms linear forwards;
 }
 
