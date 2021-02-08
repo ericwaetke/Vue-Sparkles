@@ -44,7 +44,7 @@ export default {
   z-index: 2;
   animation: growAndShrink 600ms ease-in-out forwards;
 }
-svg{
+.sparkleWrapper>svg{
   animation: spin 600ms linear forwards;
 }
 
