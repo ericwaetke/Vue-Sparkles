@@ -8,6 +8,7 @@
       :height="size"
       viewBox="0 0 160 160"
       fill="none"
+      class="sparkle"
     >
       <path
         :d="path"
@@ -44,7 +45,7 @@ export default {
   z-index: 2;
   animation: growAndShrink 600ms ease-in-out forwards;
 }
-.sparkleWrapper>svg{
+.sparkleWrapper>svg.sparkle{
   animation: spin 600ms linear forwards;
 }
 

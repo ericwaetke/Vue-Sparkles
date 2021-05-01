@@ -1,5 +1,5 @@
 // Import vue component
-import component from '@/vue-sparkles.vue';
+import component from './vue-sparkles.vue';
 
 // install function executed by Vue.use()
 const install = function installVueSparkles(Vue) {

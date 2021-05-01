@@ -19,6 +19,7 @@ import Vue from 'vue';
 //
 //
 //
+//
 var script = {
   name: "SparkleInstance",
   props: {
@@ -186,6 +187,7 @@ var __vue_render__ = function () {
       "createdAt": _vm.createdAt
     }
   }, [_c('svg', {
+    staticClass: "sparkle",
     attrs: {
       "width": _vm.size,
       "height": _vm.size,
@@ -205,8 +207,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-ee1a390c_0", {
-    source: ".sparkleWrapper{position:absolute;pointer-events:none;z-index:2;animation:growAndShrink .6s ease-in-out forwards}svg{animation:spin .6s linear forwards}@keyframes growAndShrink{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(180deg)}}",
+  inject("data-v-44b36eaa_0", {
+    source: ".sparkleWrapper[data-v-44b36eaa]{position:absolute;pointer-events:none;z-index:2;animation:growAndShrink-data-v-44b36eaa .6s ease-in-out forwards}.sparkleWrapper>svg.sparkle[data-v-44b36eaa]{animation:spin-data-v-44b36eaa .6s linear forwards}@keyframes growAndShrink-data-v-44b36eaa{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}@keyframes spin-data-v-44b36eaa{from{transform:rotate(0)}to{transform:rotate(180deg)}}",
     map: undefined,
     media: undefined
   });
@@ -214,7 +216,7 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = undefined;
+const __vue_scope_id__ = "data-v-44b36eaa";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
@@ -364,8 +366,8 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-c1b44120_0", {
-    source: "#sparkleWrapper{position:relative;display:inline-block}.sparkleChildWrapper{position:relative;z-index:2;font-weight:700}",
+  inject("data-v-08cca665_0", {
+    source: "#sparkleWrapper[data-v-08cca665]{position:relative;display:inline-block}.sparkleChildWrapper[data-v-08cca665]{position:relative;z-index:2;font-weight:700}",
     map: undefined,
     media: undefined
   });
@@ -373,7 +375,7 @@ const __vue_inject_styles__$1 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$1 = undefined;
+const __vue_scope_id__$1 = "data-v-08cca665";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;

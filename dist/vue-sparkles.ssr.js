@@ -17,6 +17,7 @@
 //
 //
 //
+//
 var script = {
   name: "SparkleInstance",
   props: {
@@ -167,7 +168,7 @@ var __vue_render__ = function __vue_render__() {
     attrs: {
       "createdAt": _vm.createdAt
     }
-  }, [_vm._ssrNode("<svg" + _vm._ssrAttr("width", _vm.size) + _vm._ssrAttr("height", _vm.size) + " viewBox=\"0 0 160 160\" fill=\"none\"><path" + _vm._ssrAttr("d", _vm.path) + _vm._ssrAttr("fill", _vm.color) + "></path></svg>")]);
+  }, [_vm._ssrNode("<svg" + _vm._ssrAttr("width", _vm.size) + _vm._ssrAttr("height", _vm.size) + " viewBox=\"0 0 160 160\" fill=\"none\" class=\"sparkle\" data-v-44b36eaa><path" + _vm._ssrAttr("d", _vm.path) + _vm._ssrAttr("fill", _vm.color) + " data-v-44b36eaa></path></svg>")]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -175,8 +176,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-ee1a390c_0", {
-    source: ".sparkleWrapper{position:absolute;pointer-events:none;z-index:2;animation:growAndShrink .6s ease-in-out forwards}svg{animation:spin .6s linear forwards}@keyframes growAndShrink{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(180deg)}}",
+  inject("data-v-44b36eaa_0", {
+    source: ".sparkleWrapper[data-v-44b36eaa]{position:absolute;pointer-events:none;z-index:2;animation:growAndShrink-data-v-44b36eaa .6s ease-in-out forwards}.sparkleWrapper>svg.sparkle[data-v-44b36eaa]{animation:spin-data-v-44b36eaa .6s linear forwards}@keyframes growAndShrink-data-v-44b36eaa{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}@keyframes spin-data-v-44b36eaa{from{transform:rotate(0)}to{transform:rotate(180deg)}}",
     map: undefined,
     media: undefined
   });
@@ -184,10 +185,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = undefined;
+var __vue_scope_id__ = "data-v-44b36eaa";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-ee1a390c";
+var __vue_module_identifier__ = "data-v-44b36eaa";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
@@ -306,7 +307,7 @@ var __vue_render__$1 = function __vue_render__() {
     attrs: {
       "id": "sparkleWrapper"
     }
-  }, [_vm._ssrNode("<div class=\"sparkleChildWrapper\">", "</div>", [_vm._t("default")], 2)]);
+  }, [_vm._ssrNode("<div class=\"sparkleChildWrapper\" data-v-08cca665>", "</div>", [_vm._t("default")], 2)]);
 };
 
 var __vue_staticRenderFns__$1 = [];
@@ -314,8 +315,8 @@ var __vue_staticRenderFns__$1 = [];
 
 var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-c1b44120_0", {
-    source: "#sparkleWrapper{position:relative;display:inline-block}.sparkleChildWrapper{position:relative;z-index:2;font-weight:700}",
+  inject("data-v-08cca665_0", {
+    source: "#sparkleWrapper[data-v-08cca665]{position:relative;display:inline-block}.sparkleChildWrapper[data-v-08cca665]{position:relative;z-index:2;font-weight:700}",
     map: undefined,
     media: undefined
   });
@@ -323,10 +324,10 @@ var __vue_inject_styles__$1 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$1 = undefined;
+var __vue_scope_id__$1 = "data-v-08cca665";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-c1b44120";
+var __vue_module_identifier__$1 = "data-v-08cca665";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;
